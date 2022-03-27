@@ -1,0 +1,30 @@
+:root {
+    --main-bg-color: rgba(250, 40, 40, 0);
+}
+
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+body{
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+}
+
+.container{
+    margin: 2em;
+    padding: 1em;    
+}
+
+.container > .main{
+    display: block;
+}
+
+.bg{
+    background-color: aquamarine;
+    font-size: larger;
+}
+
