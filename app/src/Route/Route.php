@@ -2,6 +2,7 @@
 
     namespace SRC\Route;
 
+    use App\Controladores\Auth\Auth;
     use SRC\Route\SRC\URI;
 
     class Route {
@@ -17,6 +18,14 @@
 
             //Retorna un Middleware
             return;
+        }
+
+        public static function middleware(String $agent) {
+            switch($agent){
+                case "auth":
+                    return (Auth::isLogged()) ? new self : "Login" ;
+                    break;
+            }
         }
 
         /**

@@ -4,7 +4,7 @@
 use App\Bin\View;
 use App\Controladores\HTTP\Usuario_controlador;
 use SRC\Route\Route;
-    use SRC\Route\SRC\Request;
+use SRC\Route\SRC\Request;
 
     class Web {
 
@@ -14,7 +14,7 @@ use SRC\Route\Route;
             
             Route::get('/Usuario/:id', [Usuario_controlador::class, "vistaUsuarioPorId"]);
 
-            Route::get('/', function(Request $req) {
+            Route::middleware('auth')->get('/', function(Request $req) {
                 $home = new View("home.php");
                 $home->title = "Pagina Principal";
                 $home->head = "Pagina Principal del Sitio Web";
